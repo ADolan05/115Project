@@ -29,7 +29,7 @@ data = [ {'Title': 'SOLE PARK', 'Category': 'SCULPTURE', 'Type': 'RELIEF',
 
 #define getValuesForKey
 #Input: key, a string that is a key for records, and records is list of dictionaries
-#returns: a list of values in records that have the key that is the same as the parameter key
+#Returns: a list of values in records that have the key that is the same as the parameter key
 #getValuesForKey("Artist", data) should return a list of all artist in data
 def getValuesForKey(key,records):
     out = []
@@ -43,7 +43,7 @@ def getValuesForKey(key,records):
 
 #define countMatchesByKey
 #Input: 3 parameters, key: a string, value: a value, and records: a list of dictionaries
-#Retruns: the number of records whose key pair matches the parameters key and pair
+#Returns: the number of records whose key pair matches the parameters key and pair
 # countMatchesByKey("Artist","UNKNOWN",data) should return 4
 def countMatchesByKey(key, value, records):
     match = 0
@@ -55,7 +55,7 @@ def countMatchesByKey(key, value, records):
 
 #define countMatchesByKeys
 #Input: 5 parameters: key1, value1, key2, value2, records (Same concept as countMatchesByKey)
-#Returns: number of records who have key pairs that match for key1:value1 and key2:Value2
+#Returns: number of dictionaries (records) who have key pairs that match for key1:value1 and key2:Value2
 def countMatchesByKeys(key1, value1, key2, value2, records):
     match = 0
     for myDict in records:
@@ -64,15 +64,15 @@ def countMatchesByKeys(key1, value1, key2, value2, records):
         for k in myDict.keys():
             if k == key1 and myDict[k]== value1: 
                 pair1 = 1
-        for i in myDict.keys():
-            if i == key2 and myDict[i]== value2:
+        for k in myDict.keys():
+            if k == key2 and myDict[k]== value2:
                 pair2 = 1
         if pair1 == 1 and pair2 == 1:
             match = match + 1
     return match
 #define filterByKey
 #Input: 3 parameters: key, value, records
-#returns: a list of dictionaries where each of the dictionaries have the key pair
+#Returns: a list of dictionaries where each of the dictionaries have the key pair
 #that matches key and value
 def filterByKey(key, value, records):
     myList = []
